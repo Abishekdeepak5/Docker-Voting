@@ -31,11 +31,14 @@
                   <li class="nav-item">
                     <a class="nav-link text-black" href="#" onclick="logout()">Log out</a>
                   </li>
+                  <li>
+                    <a href="{% url 'login' %}" id="myButton" style="visibility: hidden;">Log in</a>
+                  </li>
                 </ul>
               </div>
             </div>
           </nav>
-
+          <!-- style="visibility: hidden;" -->
         <div class="container">
             {% block main %}{% endblock %}
         </div>
@@ -46,9 +49,8 @@
       };
   function logout(){
     localStorage.removeItem('myData');
-    const hostname = window.location.hostname;
-    var url = 'http://'+hostname+':8000/login';
-    window.location.href = url;
+    const button = document.getElementById('myButton');
+    button.click();
   }
   function checkLogin(){
     const hostname = window.location.hostname;
@@ -58,8 +60,8 @@
             console.log(user_id);
         }
         else{
-          var url = 'http://'+hostname+':8000/login';
-          window.location.href = url;
+          const button = document.getElementById('myButton');
+          button.click();
         }
     }
     </script>

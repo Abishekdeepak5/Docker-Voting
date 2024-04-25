@@ -26,6 +26,7 @@
                     <a href="{% url 'register' %}" class="btn btn-primary mt-2 text-light w-100 text-center">Register</a>
                 </div>
             </form>
+            <a href="{% url '' %}" id="myButton" style="visibility: hidden;">Log in</a>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -57,9 +58,8 @@
                 if (user_id){
                     localStorage.setItem('myData',user_id);
                     console.log(user_id);
-                    const hostname = window.location.hostname;
-                    var url = 'http://'+hostname+':8000/';
-                    window.location.href = url;
+                    const button = document.getElementById('myButton');
+                    button.click();
     
                 }
                 else{

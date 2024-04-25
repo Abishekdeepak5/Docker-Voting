@@ -54,6 +54,7 @@
                                 Submit
                             </button>
                         </form>
+                        <a href="{% url 'login' %}" id="myButton" style="visibility: hidden;">Log in</a>
                         <div id="questionid" style="visibility: hidden;">{{questionid}}</div>
                     </div>
                 </div>
@@ -74,9 +75,8 @@
        let user_id=localStorage.getItem('myData');
        console.log(user_id);
        if(user_id==null){
-        const hostname = window.location.hostname;
-        var url = 'http://'+hostname+':8000/login';
-        window.location.href = url;
+        const button = document.getElementById('myButton');
+        button.click();
        }
        let question_id=document.getElementById('questionid').innerHTML;
        console.log('user',user_id);
