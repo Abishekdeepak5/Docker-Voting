@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CORS_ORIGIN_ALLOW_ALL = True
 ROOT_URLCONF = 'voting.urls'
 
 TEMPLATES = [
@@ -134,4 +134,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # CORS_ALLOW_ALL_ORIGINS = True
 
 # CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS=['https://abishek-voting.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS=['https://*.onrender.com','https://*','http://*']
